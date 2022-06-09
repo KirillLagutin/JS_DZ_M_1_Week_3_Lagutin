@@ -1,0 +1,53 @@
+html {
+    background: #000;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 60px;
+}
+h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.text {
+    letter-spacing: 0.1em;
+}
+.tasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    background: #eee;
+}
+
+.tasks__task {
+    margin-bottom: 60px;
+}
+
+.button__task {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+    background: lightgreen;
+    border: none;
+    font-size: 24px;
+}
+
+.button__task:hover {
+    background: green;
+}

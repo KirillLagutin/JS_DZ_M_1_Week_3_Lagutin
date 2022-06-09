@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>DZ-1-Week-3-Lagutin</title>
+</head>
+
+<body>
+
+    <div class="tasks">
+
+        <h1>Домашка по третей неделе</h1>
+        <h2>В заданиях нужно использовать while, do while или for.</h2>
+
+        <h3>Задача №1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.</h3>
+        <div class="tasks__task">
+                
+            <pre>
+document.querySelector(".task1").onclick = function () {
+
+    let dig1 = prompt('Введите два числа через пробел: ');
+    let dig1Arr = dig1.split(' ');
+    let res1 = 0;
+
+    if (dig1Arr.length == 2) {
+
+        if (dig1Arr[0] > dig1Arr[1]) {
+
+            let temp1 = dig1Arr[0];
+            dig1Arr[0] = dig1Arr[1];
+            dig1Arr[1] = temp1;
+        }
+
+        for (let i = dig1Arr[0]; i <= dig1Arr[1]; i++) {
+            res1 += Number(i);
+        }
+
+        alert(`Сумма чисел в этом диапазоне = ${res1}`);
+
+    } else { alert('Вы ввели не два числа! Попробуйте снова.'); }
+}
+            </pre>
+
+            <button class="button__task task1">Прооверить задачу №1</button>
+        </div>
+
+        <h3>Задача №2. Запросить 2 числа и найти только наибольший общий делитель.</h3>
+        <div class="tasks__task">
+                
+            <pre>
+document.querySelector(".task2").onclick = function () {
+
+    let dig2 = prompt('Введите два числа через пробел: ');
+    let dig2Arr = dig2.split(' ');
+
+    if (dig2Arr.length == 2) {
+
+        if (dig2Arr[0] > dig2Arr[1]) {
+
+            let temp2 = dig2Arr[0];
+            dig2Arr[0] = dig2Arr[1];
+            dig2Arr[1] = temp2;
+        }
+
+        for (let i = dig2Arr[0]; i > 0; i--) {
+
+            if (dig2Arr[1] % i === 0) {
+
+                for (let j = i; j > 0; j--) {
+
+                    if (dig2Arr[0] % j === 0) {
+
+                        alert(`Найбольший общий делитель = ${j}`);
+                        return;
+                    }
+                }
+            }
+        }               
+    } else { alert('Вы ввели не два числа! Попробуйте снова.'); }
+}
+            </pre>
+            
+            <button class="button__task task2">Прооверить задачу №2</button>
+        </div>
+
+        <h3>Задача №3. Запросить у пользователя число и вывести все делители этого числа.</h3>
+        <div class="tasks__task">
+                
+            <pre>
+document.querySelector(".task3").onclick = function () {
+
+    let dig3 = +promt('Введите число');
+    let divider = 1;
+    let dividers = [];
+
+    do {
+        if (dig3 % divider === 0) {
+            dividers.push(divider);
+        }
+        divider++;
+    } while (divider === dig3);
+
+    dividers.join('');
+    alert(`Все делители этого числа: ${dividers}`);
+}
+            </pre>
+
+            <button class="button__task task3">Прооверить задачу №3</button>
+        </div>
+
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
